@@ -10,6 +10,6 @@
 
 - But it is vulnerable.There are many means to detect it.（Stack backtracing 、code check、shoot screen ......）
 
-- If you want to renew pattern code,watching the follow image 
+- If you want to renew pattern code,watching the follow image,you can quickly find this code segment.
 
 <img  src="img/1.png">
