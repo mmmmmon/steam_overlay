@@ -1,11 +1,13 @@
 #pragma once
 #include <Windows.h>
-#include <D3D11.h>
 #include <mutex>
 #include <vector>
+#include <d3d12.h>
+#include <dxgi1_4.h>
 #include "imgui/imgui.h"
-#include "imgui/imgui_impl_dx11.h"
+#include "imgui/imgui_impl_dx12.h"
 #include "imgui/imgui_impl_win32.h"
+#include "MinHook\Include\MinHook.h"
 
 typedef struct _IMAGE_DOS_HEADERS {      // DOS .EXE header
 	WORD   e_magic;                     // Magic number
@@ -87,7 +89,6 @@ namespace tools
 	}
 }
 
-typedef HRESULT(__stdcall* Present_t) (IDXGISwapChain* pSwapChain, UINT SyncInterval, UINT Flags);
 typedef void (*steam_hook_routine_t) ();
 extern LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 
@@ -100,6 +101,5 @@ public:
 	steam_overlay();
 	~steam_overlay();
 private:
-	bool hook(__int64 addr, __int64 func, __int64* orig);
 };
 

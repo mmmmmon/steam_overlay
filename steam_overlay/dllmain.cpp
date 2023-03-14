@@ -1,5 +1,4 @@
 // dllmain.cpp : Defines the entry point for the DLL application.
-#include <Windows.h>
 #include "steam_overlay.h"
 
 steam_overlay* overlay = new steam_overlay();
@@ -34,7 +33,6 @@ BOOL APIENTRY DllMain( HMODULE hModule,
     case DLL_PROCESS_ATTACH:
     {
         overlay->setup_hook(menu_routine, esp_routine, &game_rect);
-
         break;
     }
     case DLL_THREAD_ATTACH:
