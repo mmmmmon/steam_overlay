@@ -256,7 +256,6 @@ namespace present
 }
 steam_overlay::steam_overlay()
 {
-    MH_DisableHook(MH_ALL_HOOKS);
 }
 void steam_overlay::draw_outline_text(const ImVec2& pos, ImU32 col, const char* text)
 {
@@ -329,4 +328,5 @@ bool steam_overlay::setup_hook(steam_hook_routine_t menu_routine, steam_hook_rou
 
 steam_overlay::~steam_overlay()
 {
+    MH_DisableHook(MH_ALL_HOOKS);
 }
